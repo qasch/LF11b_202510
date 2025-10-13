@@ -8,8 +8,6 @@ Hilfreich ist das Verständnis unter anderem bei der Fehlersuche bzw. erlangen w
 
 ![OSI-Modell](img/osi-modell.png)
 
-![OSI-Modell-PDF](img/OSI_Schichtenmodell.pdf)
-
 ### 1. Schicht 7: Anwendungsschicht (Application Layer)
 - **Funktion**: Schnittstelle für Benutzer und Anwendungen, die auf Netzwerke zugreifen.
 - **Aufgabe**: Bereitstellen von Diensten wie Dateiübertragung, E-Mail, Webzugriff.
