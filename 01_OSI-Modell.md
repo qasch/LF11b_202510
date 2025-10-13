@@ -45,6 +45,31 @@ Hilfreich ist das Verständnis unter anderem bei der Fehlersuche bzw. erlangen w
 - **Aufgabe**: Definition von Kabeln, Signalen, Frequenzen und physischer Verbindung.
 - **Beispiele**: Netzwerkkabel, elektrische Signale, Lichtimpulse (bei Glasfaser).
 
+## Kommunikation im OSI-Modell
+
+Datenübertragung erfolgt von der **höchsten Schicht** (Schicht 7, Anwendung) zur **untersten Schicht** (Schicht 1, Physik). Jede Schicht fügt spezifische Steuerinformationen hinzu (z. B. Header), bevor die Daten an die nächste Schicht übergeben werden. Dieser Prozess wird als **Encapsulation** bezeichnet. Beim Empfang erfolgt die **Decapsulation**, wobei die Steuerinformationen entfernt werden.
+
+## Vorteile des OSI-Modells
+
+1. **Standardisierung**: Bietet eine einheitliche Grundlage für die Entwicklung und Nutzung von Netzwerken.
+2. **Modularität**: Änderungen in einer Schicht beeinflussen andere Schichten nicht.
+3. **Fehlersuche**: Probleme können gezielt in einer bestimmten Schicht lokalisiert werden.
+4. **Herstellerunabhängigkeit**: Ermöglicht Interoperabilität zwischen Systemen verschiedener Hersteller.
+
+## Vergleich mit dem TCP/IP-Modell
+
+Das OSI-Modell wird hauptsächlich als theoretisches Konzept verwendet, während das **TCP/IP-Modell** in der Praxis häufiger Anwendung findet. Das TCP/IP-Modell hat nur **vier Schichten**, die mehrere OSI-Schichten zusammenfassen:
+
+- **Netz(werk)zugang** (entspricht Schicht 1-2) - physische Infrastruktur: Ethernet-Kabel, WLANs, Netzwerkschnittstellenkarten, Gerätetreiber ...
+- **Internet** (entspricht Schicht 3) - steuert Fluss und Weiterleitung des Datenverkehrs
+- **Transport** (entspricht Schicht 4) - zuverlässige Datenverbindung, teilt Daten in Pakete auf, bestätigt Pakete von Sender und Empfänger (TCP, UDP), Ende-zu-Ende-Kommunikation
+- **Anwendung** (entspricht Schicht 5-7 des OSI-Modells) - gewährt Benutzenden Zugang zum Netz (HTTP, FTP, E-Mail (POP, SMTP), Messenger), was Nutzende sehen/interagieren
+
+- **TCP** (*Transmission Control Protocol*) - für Datenübermittlung verantwortlich (sendet und empfängt die Post)
+- **IP** *Internet Protocol* - ermittelt die IP Adresse (sortiert die Post)
+
+TCP benötigt eine IP Adresse, um Daten zu senden.
+
 ## Encapsulation
 
 **Encapsulation** (Einbettung) beschreibt den Prozess, bei dem Daten in einem Netzwerkprotokoll in eine **Hülle aus Steuerinformationen** (Header) eingepackt werden, bevor sie zur Übertragung an die nächste Schicht weitergeleitet werden. Jede Schicht des **OSI-Referenzmodells** fügt dabei ihre eigenen spezifischen Informationen hinzu. Diese zusätzlichen Informationen ermöglichen es, dass die Daten korrekt übertragen, adressiert, geroutet und interpretiert werden können.
