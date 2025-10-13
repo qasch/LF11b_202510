@@ -6,9 +6,9 @@ Hilfreich ist das Verständnis unter anderem bei der Fehlersuche bzw. erlangen w
 
 ## Die sieben Schichten des OSI-Modells
 
-![OSI-Modell](../img/osi-modell.png)
+![OSI-Modell](img/osi-modell.png)
 
-![OSI-Modell-PDF](../img/OSI_Schichtenmodell.pdf)
+![OSI-Modell-PDF](img/OSI_Schichtenmodell.pdf)
 
 ### 1. Schicht 7: Anwendungsschicht (Application Layer)
 - **Funktion**: Schnittstelle für Benutzer und Anwendungen, die auf Netzwerke zugreifen.
@@ -51,7 +51,7 @@ Hilfreich ist das Verständnis unter anderem bei der Fehlersuche bzw. erlangen w
 
 **Encapsulation** (Einbettung) beschreibt den Prozess, bei dem Daten in einem Netzwerkprotokoll in eine **Hülle aus Steuerinformationen** (Header) eingepackt werden, bevor sie zur Übertragung an die nächste Schicht weitergeleitet werden. Jede Schicht des **OSI-Referenzmodells** fügt dabei ihre eigenen spezifischen Informationen hinzu. Diese zusätzlichen Informationen ermöglichen es, dass die Daten korrekt übertragen, adressiert, geroutet und interpretiert werden können.
 
-![Encapsulaiont](../img/encapsulation.png)
+![Encapsulaiont](img/encapsulation.png)
 
 ### Ablauf der Encapsulation
 
