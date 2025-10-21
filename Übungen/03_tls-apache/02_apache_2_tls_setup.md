@@ -1,6 +1,6 @@
 # Apache2 absichern mit selbst erstelltem TLS-Zertifikat
 
-> Anleitung zur Absicherung des lokalen Apache2-Webserver mit einem selbstsignierten TLS-Zertifikat.
+Anleitung zur Absicherung des lokalen Apache2-Webserver mit einem selbstsignierten TLS-Zertifikat.
 
 >[!NOTE]
 > Auch diese Übung bitte per SSH vom lokalen Windows Rechner aus durchführen.
@@ -114,6 +114,10 @@ auskommentiert.
 
 Dies sind Standard-Zertifikate, die von Debian mitgeliefert werden. Wir wollen aber unser selbst erstelltes Zertifikat nutzen.
 
+### Konfigurationsdatei aktivieren
+
+Die Datei liegt im Verzeichnis `/etc/apache2/sites-available`. Der Webserver sieht aber nur Konfigurationsdateien unter `/etc/apache2/sites-enabled`. Wir müssen also einen *Symlink* erzeugen 
+
 ## Schritt 4: Apache neu starten
 
 ```bash
@@ -157,11 +161,13 @@ sudo nano /etc/apache2/sites-available/000-default.conf
 Fügt im `<VirtualHost *:80>`-Block hinzu:
 
 ```apache
-Redirect "/" "https://ip-adresse-debian"
+Redirect permanent "/" "https://ip-adresse-debian"
 # z.B.:
-Redirect "/" "https://192.168.0.50/"
+Redirect permanent "/" "https://192.168.0.50/"
 ```
 Damit sagen wir dem Webserver, dass alles was ankommt auf HTTPS umgeleitet werden soll.
+
+### Praxis: Zusätzlich HSTS aktivieren
 
 >[!NOTE] 
 > Auf einem "echten" Server würden wir zusätzlich *HSTS (HTTP Strict Transport Security)* nutzen. Ein HSTS-Header teilt dem Browser z.B. mit: "Bitte verwende für die nächsten 31536000 Sekunden (1 Jahr) immer HTTPS für diese Domain – auch wenn der Benutzer http:// eingibt."
@@ -179,6 +185,11 @@ Den könnten wir wie folgt in der `/etc/apache2/sites-available/default-ssl.conf
     # weitere Konfiguration...
 </VirtualHost>
 ```
+
+Zusätzlich müssten wir auch noch das Header-Modul des Apache2 aktivieren:
+
+    sudo a2enmod headers
+
 Konfiguration neu einlesen:
 
 ```bash
