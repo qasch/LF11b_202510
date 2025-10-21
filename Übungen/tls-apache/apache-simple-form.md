@@ -213,9 +213,9 @@ It works!
 Datei erstellen und Schreibrechte des Apache‑Users (`www-data`) sicherstellen:
 
 ```bash
-sudo touch /var/www/html/form.log
-sudo chown www-data:www-data /var/www/html/form.log
-sudo chmod 0644 /var/www/html/form.log
+sudo touch /var/www/html/form_submissions.log
+sudo chown www-data:www-data /var/www/html/form_submissions.log
+sudo chmod 0644 /var/www/html/form_submissions.log
 ```
 
 ## 3) Vom Windows‑Rechner im selben LAN zugreifen
