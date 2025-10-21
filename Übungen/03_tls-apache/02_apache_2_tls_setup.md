@@ -167,7 +167,33 @@ Redirect permanent "/" "https://192.168.0.50/"
 ```
 Damit sagen wir dem Webserver, dass alles was ankommt auf HTTPS umgeleitet werden soll.
 
-### Praxis: Zusätzlich HSTS aktivieren
+### Generischere Konfiguration mit mod_rewrite
+
+Obige Konfiguration hat den Nachteil, dass wir die IP Adresse hardkodiert angeben. Wir können besser mit Variablen und dem Rewrite Modul von Apache arbeiten:
+```
+<VirtualHost *:80>
+    
+    RewriteEngine On
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+</VirtualHost>
+```
+**Erklärung:**
+- `^(.*)$` ist ein regulärer Ausdruck:
+  - `^` steht für den Anfang einer Zeile
+  - `()` was in den Klammern steht ist eine Gruppe und könnte später über `$1` referenziert/wiederholt werden
+  - `.*` der Punkt steht für ein beliebiges Zeichen, das Sternchen dafür, dass dieses Zeichen beliebig oft vorkommen darf
+  - `$` steht für das Ende einer Zeile
+- `%{HTTP_HOST}` nimmt automatisch den Hostnamen/die IP aus der Anfrage
+- `%{REQUEST_URI}` bewahrt den kompletten Pfad
+
+Jetzt noch das Rewrite Modul aktivieren und Apache2 neu starten/Konfigurationsdatei neu einlesen:
+```
+a2enmod rewrite
+systemctl restart apache2
+```
+
+### Für der Praxis: Zusätzlich HSTS aktivieren
 
 >[!NOTE] 
 > Auf einem "echten" Server würden wir zusätzlich *HSTS (HTTP Strict Transport Security)* nutzen. Ein HSTS-Header teilt dem Browser z.B. mit: "Bitte verwende für die nächsten 31536000 Sekunden (1 Jahr) immer HTTPS für diese Domain – auch wenn der Benutzer http:// eingibt."
@@ -175,7 +201,7 @@ Damit sagen wir dem Webserver, dass alles was ankommt auf HTTPS umgeleitet werde
 Den könnten wir wie folgt in der `/etc/apache2/sites-available/default-ssl.conf` einfügen:
 ```
 <VirtualHost *:443>
-    ServerName 192.168.0.50
+   
     SSLEngine on
     SSLCertificateFile      /etc/ssl/localcerts/server.crt
     SSLCertificateKeyFile   /etc/ssl/localcerts/server.key
