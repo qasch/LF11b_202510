@@ -28,6 +28,8 @@ usermod -aG sudo student
 
 Damit wird der Benutzer zur Grupps `sudo` hinzugefügt und kann künftig Befehle mit `sudo` ausführen.
 
+Nun müsst ihr euch einmal vom System (z.B. per SSH) ab- und wieder anmelden, um die neue Gruppenzugehörigkeit gülitg zu machen.
+
 ### 3. Testen der Berechtigung
 
 Wechsle zum Benutzer:
