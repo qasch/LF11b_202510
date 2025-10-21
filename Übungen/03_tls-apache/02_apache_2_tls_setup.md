@@ -116,18 +116,21 @@ Dies sind Standard-Zertifikate, die von Debian mitgeliefert werden. Wir wollen a
 
 ### Konfigurationsdatei aktivieren
 
-Die Datei liegt im Verzeichnis `/etc/apache2/sites-available`. Der Webserver sieht aber nur Konfigurationsdateien unter `/etc/apache2/sites-enabled`. Wir müssen also einen *Symlink* erzeugen 
-
+Die Datei liegt im Verzeichnis `/etc/apache2/sites-available`. Der Webserver sieht aber nur Konfigurationsdateien unter `/etc/apache2/sites-enabled`. Wir müssen also einen *Symlink* erzeugen. Das geht am Einfachsten mit folgendem Kommando:
+```bash
+sudo a2ensite default-ssl
+# Konfiguration neu einlesen
+sudo systemctl reload apache2
+```
 ## Schritt 4: Apache neu starten
 
 ```bash
 sudo systemctl restart apache2
 ```
-
 ## Schritt 5: Zugriff testen
 
 Öffne im Browser:
-```
+```apache
 https://ip-adresse-debian
 # z.B.
 https://192.168.0.50
@@ -225,5 +228,4 @@ sudo systemctl reload apache2
 
 1. Recherchiert doch einmal kurz selbständig zum Thema HSTS.
 2. Informiert euch über das Projekt [Let's Encrypt](https://letsencrypt.org/) 
-
 
