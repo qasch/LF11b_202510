@@ -88,6 +88,13 @@ dann wurde `sudo` erfolgreich eingerichtet.
    curl -I http://127.0.0.1/
    # Erwartet: HTTP/1.1 200 OK
    ```
+
+6. Alternativ könnt ihr auch in einem Browser auf dem Windows Rechner die IP Adresse des Debian Servers eingeben. Hier sollte die Startseite des Apache2 erscheinen. Diese liegt unter `/var/www/html/index.html`. Spasseshalber könnt ihr die ja auch mal editieren und dann neu laden, z.B. die Zeile 219 mit `It works!` ändern:
+```
+<div id="about"></div>
+It works!
+</div>
+```
 ## 2) Formular anlegen
 
 1. Datei erstellen und Inhalt einfügen:
