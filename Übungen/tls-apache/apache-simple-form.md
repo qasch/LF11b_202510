@@ -2,7 +2,8 @@
 
 > Ziel: Auf einem **Debian**-Server Apache2 mit PHP installieren, welcher ein einfaches **Login-Formular** bereitstellt. Anschliessend wird die Übertragung der Formulardaten mit Wireshark beobachtet.
 
->[!NOTE] Führt die gesamte Übung per SSH von eurem lokalen Rechner aus durch. So könnt ihr angenehmer arbeiten und habt vor allem die Möglichkeit, Copy und Paste zu benutzen.
+>[!NOTE] 
+> Führt die gesamte Übung per SSH von eurem lokalen Rechner aus durch. So könnt ihr angenehmer arbeiten und habt vor allem die Möglichkeit, Copy und Paste zu benutzen.
 >
 > Die Public-Key-Authentifizierung braucht dafür nicht eingerichtet zu sein, Login per User/Passwort ist genauso möglich. Falls ihr möchtet, dürft ihr das aber natürlich auch nochmal wiederholen und einrichten.
 
