@@ -157,7 +157,7 @@ sudo nano /etc/apache2/sites-available/000-default.conf
 Fügt im `<VirtualHost *:80>`-Block hinzu:
 
 ```apache
-Redirect "/" "ip-adresse-debian"
+Redirect "/" "https://ip-adresse-debian"
 # z.B.:
 Redirect "/" "https://192.168.0.50/"
 ```
@@ -177,10 +177,11 @@ Den könnten wir wie folgt in der `/etc/apache2/sites-available/default-ssl.conf
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
     
     # weitere Konfiguration...
-</VirtualHost>```
-
+</VirtualHost>
+```
 Konfiguration neu einlesen:
 
 ```bash
 sudo systemctl reload apache2
 ```
+Recherchiert doch einmal kurz selbständig zum Thema HSTS...
