@@ -74,10 +74,12 @@ dann wurde `sudo` erfolgreich eingerichtet.
 3. Apache Module aktivieren:
 
    ```bash
-   sudo a2enmod php # lädt das zum System passende PHP-Modul, ggf. ignorieren wenn bereits aktiv
+   sudo a2enmod php* # lädt das zum System passende PHP-Modul, ggf. ignorieren wenn bereits aktiv
    sudo systemctl reload apache2 # Webserverkonfiguration neu einlesen
    ```
 4. Test ob Webserver läuft (ggf. muss das Paket `curl` installiert werden mit `apt install curl`). Auf dem Debian‑Server:
+
+   Dazu vorher `curl` installieren mit `sudo apt install curl`.
 
    ```bash
    curl -I http://127.0.0.1/
