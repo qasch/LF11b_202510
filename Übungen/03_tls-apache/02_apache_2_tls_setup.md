@@ -184,4 +184,9 @@ Konfiguration neu einlesen:
 ```bash
 sudo systemctl reload apache2
 ```
-Recherchiert doch einmal kurz selbständig zum Thema HSTS...
+## Recherche
+
+1. Recherchiert doch einmal kurz selbständig zum Thema HSTS.
+2. Informiert euch über das Projekt [Let's Encrypt](https://letsencrypt.org/) 
+
+
