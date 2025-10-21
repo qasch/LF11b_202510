@@ -77,15 +77,17 @@ dann wurde `sudo` erfolgreich eingerichtet.
    sudo a2enmod php* # lädt das zum System passende PHP-Modul, ggf. ignorieren wenn bereits aktiv
    sudo systemctl reload apache2 # Webserverkonfiguration neu einlesen
    ```
-4. Test ob Webserver läuft (ggf. muss das Paket `curl` installiert werden mit `apt install curl`). Auf dem Debian‑Server:
 
-   Dazu vorher `curl` installieren mit `sudo apt install curl`.
+4. Paket `curl` installieren. Informiert euch kurz, wozu `curl` nützlich sein kann. 
+    ```
+    sudo apt install curl
+    ```
+5. Test ob Webserver läuft. Auf dem Debian‑Server:
 
    ```bash
    curl -I http://127.0.0.1/
    # Erwartet: HTTP/1.1 200 OK
    ```
-
 ## 2) Formular anlegen
 
 1. Datei erstellen und Inhalt einfügen:
