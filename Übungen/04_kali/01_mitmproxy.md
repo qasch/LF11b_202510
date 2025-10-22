@@ -44,7 +44,7 @@ Einfach eine Shell öffnen und folgendes eingeben:
 ```bash
 mitmweb
 ```
-Das Webinterface von `mitmproxy` öffnet sich im Browser.
+Das Webinterface von `mitmproxy` öffnet sich im Browser, bzw. ist in einem Browser über `http://127.0.0.1:8081` erreichbar.
 
 #### Andere Startoptionen
 >[!NOTE]
