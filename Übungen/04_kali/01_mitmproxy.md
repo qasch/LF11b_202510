@@ -40,7 +40,13 @@ sudo apt install -y mitmproxy wireshark
 
 Startet `mitmproxy` in der Shell oder die Web-GUI `mitmweb`. Das Webinterface ist komfortabler und wird für die Übung empfohlen.
 
-Einige Beispiele, wie `mitmproxy` über die Shell gestartet werden kann:
+Einfach eine Shell öffnen und folgendes eingeben:
+```bash
+mitmweb
+```
+Das Webinterface von `mitmproxy` öffnet sich im Browser.
+
+Einige weitere Beispiele, wie `mitmproxy` bzw. `mitmweb` über die Shell gestartet werden kann:
 ```bash
 # mitmproxy in der Shell starten 
 mitmproxy
