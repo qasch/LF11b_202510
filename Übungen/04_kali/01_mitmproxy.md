@@ -46,6 +46,10 @@ mitmweb
 ```
 Das Webinterface von `mitmproxy` öffnet sich im Browser.
 
+#### Andere Startoptionen
+>[!NOTE]
+> Wenn der Proxy wie oben beschrieben gestartet wurde und läuft ist alles gut. Folgende Optionen sind nur der Vollständigkeik halber erwähnt.
+
 Einige weitere Beispiele, wie `mitmproxy` bzw. `mitmweb` über die Shell gestartet werden kann:
 ```bash
 # mitmproxy in der Shell starten 
